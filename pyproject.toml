@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "keiba-prob-pipeline"
+version = "0.1.0"
+description = "JRA過去データを使った確率モデル→買い目生成→バックテストの実装テンプレート"
+requires-python = ">=3.8,<3.9"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

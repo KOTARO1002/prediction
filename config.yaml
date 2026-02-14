@@ -1,0 +1,41 @@
+seed: 42
+
+data:
+  raw_csv: data/raw/jra_race_horse_results.csv
+  processed_dir: data/processed
+  model_dir: artifacts/models
+  payout_csv: data/raw/jra_payouts.csv
+
+features:
+  categorical:
+    - track
+    - surface
+    - weather
+    - jockey
+    - trainer
+  numerical:
+    - distance
+    - horse_age
+    - carried_weight
+    - horse_weight
+    - popularity
+    - last3f_time
+    - days_from_last_race
+    - draw
+    - frame_no
+
+training:
+  train_end_date: "2022-12-31"
+  valid_end_date: "2023-12-31"
+  test_start_date: "2024-01-01"
+
+strategy:
+  bet_type: "win"
+  min_edge: 0.03
+  min_model_prob: 0.08
+  bankroll: 100000
+  unit_bet: 100
+  max_race_exposure: 0.03
+  kelly_fraction: 0.5
+  top_k_per_race: 6
+  min_joint_prob: 0.001
